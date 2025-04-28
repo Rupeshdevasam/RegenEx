@@ -17,6 +17,7 @@ import HeatMap from "../HeatMap";
 import DimViz from "../DimViz";
 import Upload from "../Upload";
 import PdfViewer from "../PdfViewer";
+import React from "react";
 
 {
   /* <Routes>
