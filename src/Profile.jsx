@@ -13,8 +13,8 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import MuiCard from "@mui/material/Card";
 import { styled } from "@mui/material/styles";
-import Button1 from "./components/Button";
-import { useAuth } from "./provider/authProvider";
+import Button1 from "@/components/Button";
+import { useAuth } from "@/provider/authProvider";
 import axios from "axios";
 
 const Card = styled(MuiCard)(({ theme }) => ({

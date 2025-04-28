@@ -3,7 +3,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { Document } from "react-pdf";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "./provider/authProvider";
+import { useAuth } from "@/provider/authProvider";
 
 const Upload = () => {
   const navigate = useNavigate();

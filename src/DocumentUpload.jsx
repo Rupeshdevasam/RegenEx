@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Header from "./components/Header";
-import Search from "./components/Search";
-import { useAuth } from "./provider/authProvider";
+import Header from "@/components/Header";
+import Search from "@/components/Search";
+import { useAuth } from "@/provider/authProvider";
 import axios from "axios";
-import DropdownItem from "./components/DropdownItem";
+import DropdownItem from "@/components/DropdownItem";
 import { Button } from "@mui/material";
 import { useParams } from "react-router-dom";
 

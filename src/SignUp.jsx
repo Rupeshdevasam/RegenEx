@@ -13,7 +13,7 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import MuiCard from "@mui/material/Card";
 import { styled } from "@mui/material/styles";
-import Button1 from "./components/Button";
+import Button1 from "@/components/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./components/Header";
+import Header from "@/components/Header";
 import { Modal, TextField } from "@mui/material";
 import { BarChart } from "@mui/x-charts";
 

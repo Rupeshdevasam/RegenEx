@@ -4,19 +4,19 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import { useAuth } from "../provider/authProvider";
-import { ProtectedRoute } from "./ProtectedRoute";
-import DocumentUpload from "../DocumentUpload";
-import SignUp from "../Signup";
-import Login from "../Login";
-import NoAccess from "../NoAccess";
-import Header from "../components/Header";
-import Home from "../Home";
-import Profile from "../Profile";
-import HeatMap from "../HeatMap";
-import DimViz from "../DimViz";
-import Upload from "../Upload";
-import PdfViewer from "../PdfViewer";
+import { useAuth } from "@/provider/authProvider";
+import { ProtectedRoute } from "@/routes/ProtectedRoute";
+import DocumentUpload from "@/DocumentUpload";
+import SignUp from "@/Signup";
+import Login from "@/Login";
+import NoAccess from "@/NoAccess";
+import Header from "@/components/Header";
+import Home from "@/Home";
+import Profile from "@/Profile";
+import HeatMap from "@/HeatMap";
+import DimViz from "@/DimViz";
+import Upload from "@/Upload";
+import PdfViewer from "@/PdfViewer";
 
 {
   /* <Routes>

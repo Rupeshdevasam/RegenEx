@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
-import Button1 from "./components/Button";
+import Button1 from "@/components/Button";
 
 const DimViz = () => {
   const tempData = [

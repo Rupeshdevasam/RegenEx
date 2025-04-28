@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Button from "./Button";
-import Search from "./Search";
+import Button from "@/components/Button";
+import Search from "@/components/Search";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useAuth } from "../provider/authProvider";
+import { useAuth } from "@/provider/authProvider";
 import { Button as Button1 } from "@mui/material";
 import axios from "axios";
 
