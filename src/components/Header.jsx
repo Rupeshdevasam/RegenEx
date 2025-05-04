@@ -25,10 +25,10 @@ const Header = () => {
     (async () => {
       try {
         const regionResponse = await axios.get(
-          `${import.meta.env.VITE_SOME_KEY}files/region/`
+          `${import.meta.env.VITE_SOME_KEY}/files/region/`
         );
         const reg = regionResponse?.data?.files.map((item) => item.region);
-        setAllRegions(reg);
+        if (reg) setAllRegions([...new Set(reg)]);
       } catch (error) {
         console.error("Error fetching regions:", error);
       }

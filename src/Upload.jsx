@@ -7,7 +7,7 @@ import { useAuth } from "@/provider/authProvider";
 
 const Upload = () => {
   const navigate = useNavigate();
-  const { region, setRegion, setAllRegions } = useAuth();
+  const { region, setRegion, setAllRegions, allRegions } = useAuth();
   const [allFiles, setAllFiles] = React.useState([]);
   const [uploadFile, setUploadFile] = React.useState(null);
   const [description, setDescription] = React.useState("");
@@ -45,8 +45,8 @@ const Upload = () => {
 
       if (resp.data.files) {
         setAllFiles(resp.data.files);
-        const allRegions = resp.data.files.map((item) => item.region);
-        setAllRegions(allRegions);
+        const allRegionsTemp = resp.data.files.map((item) => item.region);
+        setAllRegions([...new Set([...allRegions, ...allRegionsTemp])]);
       }
     } catch (error) {
       console.error("Error fetching files:", error);
@@ -98,14 +98,14 @@ const Upload = () => {
               <div className="flex flex-col w-full gap-2">
                 <label
                   for="message"
-                  class="block mb-2 text-sm font-medium text-black dark:text-black"
+                  className="block mb-2 text-sm font-medium text-black dark:text-black"
                 >
                   Region
                 </label>
                 <input
                   id="message"
                   rows="4"
-                  class="block p-2.5 w-full text-sm text-white bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-white dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="block p-2.5 w-full text-sm !text-[#000000] bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-white dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Write the region here..."
                   value={region1}
                   onChange={(e) => setRegion1(e.target.value)}
@@ -115,14 +115,14 @@ const Upload = () => {
               <div className="flex flex-col w-full gap-2">
                 <label
                   for="message"
-                  class="block mb-2 text-sm font-medium text-black dark:text-black"
+                  className="block mb-2 text-sm font-medium text-black dark:text-black"
                 >
                   Description
                 </label>
                 <textarea
                   id="message"
                   rows="4"
-                  class="block p-2.5 w-full text-sm text-white bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-white dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="block p-2.5 w-full text-sm !text-[#000000] bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-white dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Write the description here..."
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
