@@ -16,6 +16,7 @@ const DocumentUpload = () => {
   const [error, setError] = useState(false);
 
   const fetchData = async () => {
+    debugger;
     const response = await axios.get(
       region
         ? `${import.meta.env.VITE_SOME_KEY}/files/region?region=${region}`
@@ -45,9 +46,13 @@ const DocumentUpload = () => {
 
   const search = async (data = []) => {
     if (query) {
-      await axios.post(`${import.meta.env.VITE_SOME_KEY}/history/`, {
-        query: content,
-      });
+      try {
+        await axios.post(`${import.meta.env.VITE_SOME_KEY}/history/`, {
+          query: content,
+        });
+      } catch (error) {
+        console.error("Error fetching regions:", error);
+      }
     }
     const filtered = data?.filter((item) => {
       return (
@@ -60,6 +65,7 @@ const DocumentUpload = () => {
           (region === "" || region === item.region))
       );
     });
+    debugger;
     setFiltertedData(filtered);
     if (filtered.length === 0) {
       setError(true);

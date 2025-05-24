@@ -8,7 +8,12 @@ const Search = ({ bigText = false, setContent = () => {}, content = "" }) => {
 
   const getHistory = async () => {
     const response = await axios.get(
-      `${import.meta.env.VITE_SOME_KEY}/history/`
+      `${import.meta.env.VITE_SOME_KEY}/history/`,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
     );
     //
     const history = response.data;

@@ -1,0 +1,9 @@
+.divider {
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    var(--accent-teal),
+    var(--accent-blue),
+    var(--accent-gold)
+  );
+}

@@ -41,7 +41,12 @@ const Upload = () => {
 
   const fetchFiles = async () => {
     try {
-      const resp = await axios.get(`${import.meta.env.VITE_SOME_KEY}/files`);
+      const resp = await axios.get(`${import.meta.env.VITE_SOME_KEY}/files`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
 
       if (resp.data.files) {
         setAllFiles(resp.data.files);

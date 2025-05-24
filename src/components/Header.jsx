@@ -97,16 +97,16 @@ const Header = () => {
       <span className="hidden lg:flex gap-2 items-center">
         {!token ? (
           <div className="flex gap-[10px]">
+            <Button href="/" name={"Home"} />
+            <Button href="/document" name={"Documents"} />
+            <Button href="/heatmap" name={"Heatmap"} />
+            <Button href="/dimviz" name={"DimViz"} />
             <Button href="/login" name={"Login"} />
             <Button href="/signup" name={"Signup"} />
           </div>
         ) : (
           <div className="flex gap-[10px] relative">
-            <Button href="/" name={"Home"} />
-            <Button href="/document" name={"Documents"} />
             <Button href="/upload" name={"Upload"} />
-            <Button href="/heatmap" name={"Heatmap"} />
-            <Button href="/dimviz" name={"DimViz"} />
             <Button href="/profile" name={"Profile"} />
             <Button onClick={handleLogout} href="#" name={"Logout"} notNav />
           </div>
@@ -170,6 +170,10 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
               className="flex gap-[10px] w-full flex-col items-center"
             >
+              <Button href="/" name={"Home"} />
+              <Button href="/document" name={"Documents"} />
+              <Button href="/heatmap" name={"Heatmap"} />
+              <Button href="/dimviz" name={"DimViz"} />
               <Button href="/login" name={"Login"} />
               <Button href="/signup" name={"Signup"} />
             </div>
@@ -178,11 +182,7 @@ const Header = () => {
               onClick={() => setIsOpen(false)}
               className="flex gap-[10px] flex-col w-full items-center"
             >
-              <Button href="/" name={"Home"} />
-              <Button href="/document" name={"Documents"} />
               <Button href="/upload" name={"Upload"} />
-              <Button href="/heatmap" name={"Heatmap"} />
-              <Button href="/dimviz" name={"DimViz"} />
               <Button href="/profile" name={"Profile"} />
               <Button onClick={handleLogout} href="#" name={"Logout"} notNav />
             </div>

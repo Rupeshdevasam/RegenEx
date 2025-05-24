@@ -60,6 +60,10 @@ const Routes = () => {
           path: "/doc/:documentId",
           element: <PdfViewer />,
         },
+        { path: "/document/:query?", element: <DocumentUpload /> },
+        { path: "/heatmap", element: <HeatMap /> },
+
+        { path: "/dimviz", element: <DimViz /> },
       ],
     },
     {
@@ -73,20 +77,6 @@ const Routes = () => {
     {
       element: <ProtectedRoute />, // Wrap the component in ProtectedRoute
       children: [
-        {
-          element: <LayoutWithHeader />,
-          children: [
-            { path: "/document/:query?", element: <DocumentUpload /> },
-          ],
-        },
-        {
-          element: <LayoutWithHeader />,
-          children: [{ path: "/heatmap", element: <HeatMap /> }],
-        },
-        {
-          element: <LayoutWithHeader />,
-          children: [{ path: "/dimviz", element: <DimViz /> }],
-        },
         {
           element: <LayoutWithHeader />,
           children: [{ path: "/upload", element: <Upload /> }],
